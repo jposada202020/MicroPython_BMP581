@@ -16,11 +16,6 @@ MicroPython Driver for the Bosch BMP581 pressure sensor
 from micropython import const
 from micropython_bmp581.i2c_helpers import CBits, RegisterStruct
 
-try:
-    from typing import Tuple
-except ImportError:
-    pass
-
 
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/jposada202020/MicroPython_BMP581.git"
@@ -58,6 +53,7 @@ temperature_oversample_rate_values = (
     OSR64,
     OSR128,
 )
+
 
 class BMP581:
     """Driver for the BMP581 Sensor connected over I2C.
