@@ -2,6 +2,10 @@ Introduction
 ============
 
 
+.. image:: https://img.shields.io/badge/micropython-Ok-purple.svg
+    :target: https://micropython.org
+    :alt: micropython
+
 .. image:: https://readthedocs.org/projects/micropython-bmp581/badge/?version=latest
     :target: https://micropython-bmp581.readthedocs.io/en/latest/
     :alt: Documentation Status
