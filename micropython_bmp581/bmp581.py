@@ -59,7 +59,7 @@ class BMP581:
     """Driver for the BMP581 Sensor connected over I2C.
 
     :param ~machine.I2C i2c: The I2C bus the BMP581 is connected to.
-    :param int address: The I2C device address. Defaults to :const:`0x69`
+    :param int address: The I2C device address. Defaults to :const:`0x47`
 
     :raises RuntimeError: if the sensor is not found
 
