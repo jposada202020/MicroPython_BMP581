@@ -71,13 +71,13 @@ class BMP581:
     .. code-block:: python
 
         from machine import Pin, I2C
-        import bmp581
+        from micropython_bmp581 import bmp581
 
     Once this is done you can define your `machine.I2C` object and define your sensor object
 
     .. code-block:: python
 
-        i2c = I2C(sda=Pin(2), scl=Pin(3))
+        i2c = I2C(1, sda=Pin(2), scl=Pin(3))
         bmp581 = bmp581.BMP581(i2c)
 
     Now you have access to the attributes
