@@ -77,7 +77,7 @@ class BMP581:
 
     .. code-block:: python
 
-        i2c = I2C(sda=Pin28), scl=Pin(3))
+        i2c = I2C(sda=Pin(2), scl=Pin(3))
         bmp581 = bmp581.BMP581(i2c)
 
     Now you have access to the attributes
