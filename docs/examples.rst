@@ -51,3 +51,12 @@ Example showing the Output data rate setting
 .. literalinclude:: ../examples/bmp581_output_data_rate.py
     :caption: examples/bmp581_output_data_rate.py
     :linenos:
+
+Altitude example
+-----------------
+
+Example showing the Output data rate setting
+
+.. literalinclude:: ../examples/bmp581_altitude.py
+    :caption: examples/bmp581_altitude.py
+    :linenos:

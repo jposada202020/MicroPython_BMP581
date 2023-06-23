@@ -270,8 +270,6 @@ class BMP581:
         With the measured pressure p and the pressure at sea level p0 e.g. 1013.25hPa,
         the altitude in meters can be calculated with the international barometric formula
 
-        With the measured pressure p and the absolute altitude the pressure at sea level
-        can be calculated too. See the altitude setter for this calculation
         """
 
         altitude = 44330.0 * (

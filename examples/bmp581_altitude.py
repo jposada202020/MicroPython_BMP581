@@ -13,6 +13,5 @@ bmp = bmp581.BMP581(i2c)
 # so we "burn" one measure
 _ = bmp.pressure
 
-while True:
-    print("Pressure: {:.2f}kPa".format(bmp.pressure))
-    time.sleep(0.5)
+print("Pressure: {:.2f}kPa".format(bmp.pressure))
+print("Current altitude: {:.1f}mts".format(bmp.altitude))
