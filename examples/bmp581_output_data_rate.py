@@ -9,8 +9,6 @@ from micropython_bmp581 import bmp581
 i2c = I2C(1, sda=Pin(2), scl=Pin(3))  # Correct I2C pins for RP2040
 bmp = bmp581.BMP581(i2c)
 
-bmp.output_data_rate = bmp581.ODR240
-
 while True:
     for output_data_rate in range(0, 32, 1):
         print("Current Output data rate setting: ", bmp.output_data_rate)
