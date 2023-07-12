@@ -14,5 +14,5 @@ bmp = bmp581.BMP581(i2c)
 _ = bmp.pressure
 
 while True:
-    print("Pressure: {:.2f}kPa".format(bmp.pressure))
+    print(f"Pressure: {bmp.pressure:.2f}kPa")
     time.sleep(0.5)

@@ -2,7 +2,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-import time
 from machine import Pin, I2C
 from micropython_bmp581 import bmp581
 
@@ -13,5 +12,5 @@ bmp = bmp581.BMP581(i2c)
 # so we "burn" one measure
 _ = bmp.pressure
 
-print("Pressure: {:.2f}kPa".format(bmp.pressure))
-print("Current altitude: {:.1f}mts".format(bmp.altitude))
+print(f"Pressure: {bmp.pressure:.2f}kPa")
+print(f"Current altitude: {bmp.altitude:.1f}mts")

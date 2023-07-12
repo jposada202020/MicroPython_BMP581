@@ -21,14 +21,9 @@ urls = {Homepage = "https://github.com/jposada202020/MicroPython_BMP581"}
 keywords = [
     "sensor",
     "micropython",
-    "bmp581",
     "pressure",
-    "altitude",
     "bosch",
     "bmp581",
-    "micropython",
-    "sensor",
-    "pressure",
     "altitude",
 ]
 license = {text = "MIT"}
