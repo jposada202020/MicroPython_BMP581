@@ -15,4 +15,5 @@ _ = bmp.pressure
 
 while True:
     print(f"Pressure: {bmp.pressure:.2f}kPa")
+    print()
     time.sleep(0.5)

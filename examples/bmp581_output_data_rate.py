@@ -14,5 +14,6 @@ while True:
         print("Current Output data rate setting: ", bmp.output_data_rate)
         for _ in range(10):
             print(f"Pressure: {bmp.pressure:.2f}kPa")
+            print()
             time.sleep(0.5)
         bmp.output_data_rate = output_data_rate

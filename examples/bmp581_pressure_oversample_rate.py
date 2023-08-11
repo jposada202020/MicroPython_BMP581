@@ -18,5 +18,6 @@ while True:
         )
         for _ in range(10):
             print(f"Pressure: {bmp.pressure:.2f}kPa")
+            print()
             time.sleep(0.5)
         bmp.pressure_oversample_rate = pressure_oversample_rate

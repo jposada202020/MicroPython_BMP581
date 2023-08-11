@@ -19,6 +19,7 @@ while True:
         )
         for _ in range(10):
             temp = bmp.temperature
-            print(f"Temperature: {bmp.temperature:.2f}C")
+            print(f"Temperature: {bmp.temperature:.2f}°C")
+            print()
             time.sleep(0.5)
         bmp.temperature_oversample_rate = temperature_oversample_rate

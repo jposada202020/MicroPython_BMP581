@@ -16,5 +16,6 @@ while True:
         print("Current Power mode setting: ", bmp.power_mode)
         for _ in range(10):
             print(f"Pressure: {bmp.pressure:.2f}kPa")
+            print()
             time.sleep(0.5)
         bmp.power_mode = power_mode

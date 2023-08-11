@@ -8,7 +8,7 @@
 MicroPython Driver for the Bosch BMP581 pressure sensor
 
 
-* Author(s): Jose D. Montoya
+* Author: Jose D. Montoya
 
 
 """
@@ -24,14 +24,12 @@ _REG_WHOAMI = const(0x01)
 _OSR_CONF = const(0x36)
 _ODR_CONFIG = const(0x37)
 
-
 # Power Modes
 STANDBY = const(0x00)
 NORMAL = const(0x01)
 FORCED = const(0x02)
 NON_STOP = const(0x03)
 power_mode_values = (STANDBY, NORMAL, FORCED, NON_STOP)
-
 
 # Oversample Rate
 OSR1 = const(0x00)
@@ -104,7 +102,7 @@ class BMP581:
         self._address = address
 
         if self._device_id != 0x50:
-            raise RuntimeError("Failed to find BMP581")
+            raise RuntimeError("Failed to find the BMP581 sensor")
 
         self._power_mode = NORMAL
         self._pressure_enabled = True
@@ -145,6 +143,9 @@ class BMP581:
     def pressure_oversample_rate(self) -> str:
         """
         Sensor pressure_oversample_rate
+        Oversampling extends the measurement time per measurement by the oversampling
+        factor. Higher oversampling factors offer decreased noise at the cost of
+        higher power consumption.
 
         +---------------------------+------------------+
         | Mode                      | Value            |
@@ -233,9 +234,7 @@ class BMP581:
     def output_data_rate(self) -> int:
         """
         Sensor output_data_rate. for a complete list of values please see the datasheet
-
         """
-
         return self._output_data_rate
 
     @output_data_rate.setter
@@ -251,7 +250,6 @@ class BMP581:
         :return: Temperature in Celsius
         """
         raw_temp = self._temperature
-
         return self._twos_comp(raw_temp, 24) / 2**16.0
 
     @property
@@ -261,17 +259,14 @@ class BMP581:
         :return: Pressure in kPa
         """
         raw_pressure = self._pressure
-
         return self._twos_comp(raw_pressure, 24) / 2**6.0 / 1000.0
 
     @property
-    def altitude(self):
+    def altitude(self) -> float:
         """
         With the measured pressure p and the pressure at sea level p0 e.g. 1013.25hPa,
         the altitude in meters can be calculated with the international barometric formula
-
         """
-
         altitude = 44330.0 * (
             1.0 - ((self.pressure / self.sea_level_pressure) ** 0.190284)
         )

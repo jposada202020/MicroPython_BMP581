@@ -3,21 +3,15 @@
 # SPDX-License-Identifier: MIT
 
 [build-system]
-requires = [
-    "setuptools",
-    "wheel",
-    "setuptools-scm",
-]
+requires = ["setuptools", "wheel", "setuptools-scm"]
 
 [project]
 name = "micropython-bmp581"
 description = "MicroPython Driver for the Bosch BMP581 pressure sensor"
 version = "0.0.0+auto.0"
 readme = "README.rst"
-authors = [
-    {name = "JDM", email = "xxyx@mailmeto.mozmail.com"}
-]
-urls = {Homepage = "https://github.com/jposada202020/MicroPython_BMP581"}
+authors = [{ name = "JDM", email = "xxyx@mailmeto.mozmail.com" }]
+urls = { Homepage = "https://github.com/jposada202020/MicroPython_BMP581" }
 keywords = [
     "sensor",
     "micropython",
@@ -25,8 +19,9 @@ keywords = [
     "bosch",
     "bmp581",
     "altitude",
+    "temperature",
 ]
-license = {text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Software Development :: Libraries",
@@ -41,4 +36,4 @@ dynamic = ["dependencies", "optional-dependencies"]
 packages = ["micropython_bmp581"]
 
 [tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = { file = ["requirements.txt"] }
