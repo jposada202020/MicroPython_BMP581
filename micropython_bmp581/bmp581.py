@@ -267,10 +267,12 @@ class BMP581:
         With the measured pressure p and the pressure at sea level p0 e.g. 1013.25hPa,
         the altitude in meters can be calculated with the international barometric formula
         """
+        # was ** 0.190284, should be ** 0.190295 or better ** (1.0 / 5.255))
         altitude = 44330.0 * (
-            1.0 - ((self.pressure / self.sea_level_pressure) ** 0.190284)
+            1.0 - ((self.pressure / self.sea_level_pressure) ** (1.0 / 5.255))
         )
-        return round(altitude, 1)
+        # was round(altitude, 1), rounding limits accuracy to 100cm, sensor +/- cm
+        return altitude
 
     @altitude.setter
     def altitude(self, value: float) -> None:
